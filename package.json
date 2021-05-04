@@ -1,0 +1,56 @@
+{
+  "name": "si-assistant",
+  "version": "1.0.0",
+  "description": "Assistente virtual de voz para auxiliar alunos do curso de Sistemas de Informação na UFPB, Campus IV - Rio Tinto",
+  "main": "./webhook.ts",
+  "repository": "https://github.com/marcusviniciusfa/si-assistant",
+  "author": {
+    "name": "Marcus Vinicius",
+    "email": "marcusviniciusfabr.ti@gmail.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config --respawn --debug --transpile-only ./src/webhook.ts",
+    "tsc": "tsc --pretty --outDir ./tmp && rm -rf ./tmp",
+    "start": "yarn build && node -r dotenv/config ./dist/webhook.js",
+    "build": "rm -rf ./dist && tsc",
+    "lint": "eslint -c .eslintrc.json --fix './src/**/*.ts'",
+    "test": "jest --passWithNoTests ./src/tests/*.ts"
+  },
+  "pre-commit": [
+    "tsc",
+    "lint",
+    "test"
+  ],
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.23",
+    "@types/moment": "^2.13.0",
+    "@types/mongodb": "^3.6.12",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "^26.6.3",
+    "pre-commit": "^1.2.2",
+    "ts-jest": "^26.5.5",
+    "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@assistant/conversation": "^3.6.0",
+    "@types/uuid": "^8.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.6",
+    "sigaa-api": "^1.0.23",
+    "uuid": "^8.3.2"
+  }
+}

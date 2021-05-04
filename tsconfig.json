@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "lib": [
+      "es6"
+    ],
+    "allowJs": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@fullfilment/*": [
+        "fullfilment/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@tests/*": [
+        "tests/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@webhook/*": [
+        "webhook"
+      ],
+      "@interfaces": [
+        "interfaces"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "tests",
+    "tmp",
+    "dist"
+  ]
+}
