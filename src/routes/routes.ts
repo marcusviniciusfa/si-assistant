@@ -1,11 +1,9 @@
-import Routes, { Request, Response } from 'express'
-import handler from '@fullfilment/handler'
+import Routes from 'express'
+import eventHandler from '@fulfillment/eventHandler'
 
 const routes = Routes()
 
-/** Webhook */
-routes.post('/webhook', async (_req: Request, res: Response) => {
-  return handler(_req, res)
-})
+/** Fulfillment */
+routes.post('/fulfillment', eventHandler)
 
 export default routes

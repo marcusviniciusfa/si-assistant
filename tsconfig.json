@@ -21,8 +21,8 @@
       "@controllers/*": [
         "controllers/*"
       ],
-      "@fullfilment/*": [
-        "fullfilment/*"
+      "@fulfillment/*": [
+        "fulfillment/*"
       ],
       "@models/*": [
         "models/*"
@@ -36,7 +36,7 @@
       "@utils/*": [
         "utils/*"
       ],
-      "@webhook/*": [
+      "@webhook": [
         "webhook"
       ],
       "@interfaces": [
