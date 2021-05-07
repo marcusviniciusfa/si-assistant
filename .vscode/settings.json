@@ -11,6 +11,7 @@
       "source.fixAll.eslint": true,
     }
   },
+  "typescript.updateImportsOnFileMove.enabled": "always",
   // Json formatter config
   "[jsonc]": {
     "editor.formatOnSave": true,

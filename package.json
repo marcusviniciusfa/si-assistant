@@ -12,6 +12,7 @@
   "private": false,
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config --respawn --debug --transpile-only ./src/webhook.ts",
+    "ngrok": "ngrok http 3000",
     "tsc": "tsc --pretty --outDir ./tmp && rm -rf ./tmp",
     "start": "yarn build && node -r dotenv/config ./dist/webhook.js",
     "build": "rm -rf ./dist && tsc",
