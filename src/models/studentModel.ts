@@ -1,57 +1,31 @@
-import { Student } from '@interfaces'
 import mongoDb from '@models/mongoDb'
-import { v4 as uuidv4 } from 'uuid'
+import { Student } from '@interfaces'
 import moment from 'moment'
 
 class StudentModel implements Student {
-  public id: string
+  public sub: string // id
   public createdAt: string
   public name: string
+  public email: string
 
-  constructor (name: string) {
-    this.id = uuidv4()
-    this.createdAt = moment().format()
+  constructor (studentProps: Student) {
+    const { sub, name, email } = studentProps
+    this.sub = sub
     this.name = name
+    this.email = email
+    this.createdAt = moment().format()
   }
 
-  getStudent (): Student {
+  getStudent () {
     return {
-      id: this.id,
+      sub: this.sub,
       name: this.name,
+      email: this.email,
       createdAt: this.createdAt
     }
   }
 }
 
-async function create (name: string) {
-  const student = new StudentModel(name)
-  const test = await (await mongoDb.collection('students'))
-    .insertOne(student.getStudent())
-  return test
-}
+const collection = mongoDb.collection('students')
 
-async function find (id: string) {
-  return (await mongoDb.collection('students'))
-    .findOne({ id })
-}
-
-async function findAll () {
-  return (await mongoDb.collection('students'))
-    .find({}).toArray()
-}
-
-async function update (id: string, update: any) {
-  return (await mongoDb.collection('students'))
-    .updateOne({ id }, {
-      $set: {
-        update
-      }
-    })
-}
-
-async function remove (id: string) {
-  return (await mongoDb.collection('students'))
-    .deleteOne({ id })
-}
-
-export { create, find, findAll, update, remove }
+export { StudentModel, collection }

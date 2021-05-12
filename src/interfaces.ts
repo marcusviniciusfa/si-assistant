@@ -1,5 +1,5 @@
 export interface Student {
-  id: string
-  createdAt: string
+  sub: string
   name: string
+  email?: string | undefined
 }
