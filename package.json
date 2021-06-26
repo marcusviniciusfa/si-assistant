@@ -2,8 +2,10 @@
   "name": "si-assistant",
   "version": "1.0.0",
   "description": "Assistente virtual de voz para auxiliar alunos do curso de Sistemas de Informação na UFPB, Campus IV - Rio Tinto",
-  "main": "./webhook.ts",
-  "repository": "https://github.com/marcusviniciusfa/si-assistant",
+  "main": "./index.ts",
+  "repository": {
+    "url": "https://github.com/marcusviniciusfa/si-assistant"
+  },
   "author": {
     "name": "Marcus Vinicius",
     "email": "marcusviniciusfabr.ti@gmail.com"
@@ -11,10 +13,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config --respawn --watch ./src --debug --transpile-only ./src/webhook.ts",
-    "ngrok": "ngrok http 3000",
+    "dev": "ts-node-dev -r tsconfig-paths/register -r dotenv/config --respawn --watch ./src --debug --transpile-only ./src/index.ts",
+    "ngrok:free": "ngrok http 3000",
+    "ngrok:pro": "ngrok http -subdomain=sisin 3000",
     "tsc": "tsc --pretty --outDir ./tmp && rm -rf ./tmp",
-    "start": "yarn build && node -r dotenv/config ./dist/webhook.js",
+    "start": "yarn build && node -r dotenv/config ./dist/index.js",
     "build": "rm -rf ./dist && tsc",
     "lint": "eslint -c .eslintrc.json --fix './src/**/*.ts'",
     "test": "jest --passWithNoTests ./src/tests/*.ts"

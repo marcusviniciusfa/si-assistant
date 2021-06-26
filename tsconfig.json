@@ -36,8 +36,8 @@
       "@utils/*": [
         "utils/*"
       ],
-      "@webhook": [
-        "webhook"
+      "@index": [
+        "index"
       ],
       "@interfaces": [
         "interfaces"
@@ -49,7 +49,6 @@
   ],
   "exclude": [
     "node_modules",
-    "tests",
     "tmp",
     "dist"
   ]

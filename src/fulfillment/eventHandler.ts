@@ -3,7 +3,7 @@ import { conversation } from '@assistant/conversation'
 import greeting from './events/greeting'
 import documents from './events/documents'
 import sigaaProfile from './events/sigaaProfile'
-import accountLinking from './events/accountLinking'
+import accountLinking from './events/accountLink'
 
 const event = conversation()
 
