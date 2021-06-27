@@ -19,7 +19,7 @@
     "tsc": "tsc -p tsconfig.json --pretty --outDir ./tmp && rm -rf ./tmp",
     "start": "npm run build:before && npm run build:after",
     "build:before": "rm -rf ./dist && tsc -p tsconfig.json",
-    "build:after": "pm2-runtime start ecosystem.config.js --env production",
+    "build:after": "pm2 restart ecosystem.config.js --env production",
     "lint": "eslint -c .eslintrc.json --fix './src/**/*.ts'",
     "test": "jest --passWithNoTests ./src/tests/*.ts"
   },
