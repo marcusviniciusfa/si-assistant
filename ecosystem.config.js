@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'si-assistant-v1-0',
+    name: 'si-assistant',
     script: './dist/index.js',
     exec_mode: 'cluster',
     exp_backoff_restart_delay: 100,

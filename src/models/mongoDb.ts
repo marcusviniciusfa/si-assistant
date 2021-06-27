@@ -1,48 +1,48 @@
-import { MongoClient, Db } from 'mongodb'
+import {MongoClient, Db} from 'mongodb';
 
 class MongoDb {
   private client: MongoClient
   private db: Promise<Db>
 
-  constructor (
-    uri: string = process.env.DB_URI,
-    dbName: string = process.env.DB_NAME) {
+  constructor(
+      uri: string = process.env.DB_URI,
+      dbName: string = process.env.DB_NAME) {
     this.client = new MongoClient(uri, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
+      useUnifiedTopology: true,
+    });
 
-    this.db = this.connect(dbName)
+    this.db = this.connect(dbName);
   }
 
   /**
    * Doc
    */
-  private async connect (dbName: string) {
+  private async connect(dbName: string) {
     try {
-      await this.client.connect()
-      return this.client.db(dbName)
+      await this.client.connect();
+      return this.client.db(dbName);
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   }
 
   /**
    * Doc
    */
-  async disconnect () {
+  async disconnect() {
     try {
-      await this.client.close()
+      await this.client.close();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   }
 
   /**
    * Doc
    */
-  async collection (name: string, callback?: any) {
-    return (await this.db).collection(name, callback)
+  async collection(name: string, callback?: any) {
+    return (await this.db).collection(name, callback);
   }
 
   // getClient () {
@@ -50,4 +50,4 @@ class MongoDb {
   // }
 }
 
-export default new MongoDb()
+export default new MongoDb();

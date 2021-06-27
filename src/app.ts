@@ -1,28 +1,28 @@
 // import 'module-alias/register'
-import express, { Express } from 'express'
-import cors from 'cors'
-import routes from './routes/routes'
+import express, {Express} from 'express';
+// import cors from 'cors';
+import routes from './routes/routes';
 
 class AppController {
   public express: Express
 
-  constructor () {
-    this.express = express()
+  constructor() {
+    this.express = express();
 
-    this.middlewares()
-    this.routes()
+    this.middlewares();
+    this.routes();
   }
 
-  middlewares () {
+  middlewares() {
     this.express
-      .use(express.json())
-      .use(express.urlencoded({ extended: true }))
-      .use(cors())
+        .use(express.json())
+        .use(express.urlencoded({extended: true}));
+    // .use(cors());
   }
 
-  routes () {
-    this.express.use(routes)
+  routes() {
+    this.express.use(routes);
   }
 }
 
-export default new AppController().express
+export default new AppController().express;

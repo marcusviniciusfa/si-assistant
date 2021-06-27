@@ -1,42 +1,42 @@
-import { Student } from '../interfaces'
-import { StudentModel, collection } from '../models/studentModel'
+import {Student} from '../interfaces';
+import {StudentModel, collection} from '../models/studentModel';
 
-async function create (studentProps: Student) {
-  const student = new StudentModel(studentProps)
+async function create(studentProps: Student) {
+  const student = new StudentModel(studentProps);
 
-  const existingStudent = await find(studentProps.sub)
+  const existingStudent = await find(studentProps.sub);
 
   if (existingStudent) {
     const insertionStatus = await (await collection)
-      .insertOne(student.getStudent())
-    return insertionStatus
+        .insertOne(student.getStudent());
+    return insertionStatus;
   }
 
-  return false
+  return false;
 }
 
-async function find (sub: string) {
+async function find(sub: string) {
   return await (await collection)
-    .findOne({ sub })
+      .findOne({sub});
 }
 
-async function findAll () {
+async function findAll() {
   return await (await collection)
-    .find({}).toArray()
+      .find({}).toArray();
 }
 
-async function update (sub: string, update: any) {
+async function update(sub: string, update: any) {
   return await (await collection)
-    .updateOne({ sub }, {
-      $set: {
-        update
-      }
-    })
+      .updateOne({sub}, {
+        $set: {
+          update,
+        },
+      });
 }
 
-async function remove (sub: string) {
+async function remove(sub: string) {
   return await (await collection)
-    .deleteOne({ sub })
+      .deleteOne({sub});
 }
 
-export { create, find, findAll, update, remove }
+export {create, find, findAll, update, remove};

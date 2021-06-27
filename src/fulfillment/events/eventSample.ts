@@ -1,7 +1,7 @@
-import { ConversationV3 } from '@assistant/conversation'
+import {ConversationV3} from '@assistant/conversation';
 
-function eventSample (conv: ConversationV3) {
-  conv.add('Olá mundo!')
+function eventSample(conv: ConversationV3) {
+  conv.add('Olá mundo!');
 }
 
-export default eventSample
+export default eventSample;
