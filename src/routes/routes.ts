@@ -1,5 +1,5 @@
 import Routes from 'express'
-import eventHandler from '@fulfillment/eventHandler'
+import eventHandler from '../fulfillment/eventHandler'
 
 const routes = Routes()
 

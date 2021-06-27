@@ -1,5 +1,5 @@
-import { Student } from '@interfaces'
-import { StudentModel, collection } from '@models/studentModel'
+import { Student } from '../interfaces'
+import { StudentModel, collection } from '../models/studentModel'
 
 async function create (studentProps: Student) {
   const student = new StudentModel(studentProps)

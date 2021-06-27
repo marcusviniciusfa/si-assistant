@@ -1,5 +1,7 @@
+// import 'module-alias/register'
 import express, { Express } from 'express'
-import routes from '@routes/routes'
+import cors from 'cors'
+import routes from './routes/routes'
 
 class AppController {
   public express: Express
@@ -15,6 +17,7 @@ class AppController {
     this.express
       .use(express.json())
       .use(express.urlencoded({ extended: true }))
+      .use(cors())
   }
 
   routes () {

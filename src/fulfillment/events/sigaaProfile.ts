@@ -1,6 +1,6 @@
 import { ConversationV3, Card } from '@assistant/conversation'
 import { InstituionType, Sigaa } from 'sigaa-api'
-import { nameFormatter } from '@utils/nameFormatter'
+import { nameFormatter } from '../../utils/nameFormatter'
 
 async function sigaaProfile (conv: ConversationV3) {
   const username = ''

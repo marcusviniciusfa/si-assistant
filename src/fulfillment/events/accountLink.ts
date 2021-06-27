@@ -1,5 +1,5 @@
-import { Student } from '@interfaces'
-import { create } from '@controllers/studentController'
+import { Student } from '../../interfaces'
+import { create } from '../../controllers/studentController'
 import { ConversationV3 } from '@assistant/conversation'
 import jwt from 'jsonwebtoken'
 

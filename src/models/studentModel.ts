@@ -1,5 +1,5 @@
-import mongoDb from '@models/mongoDb'
-import { Student } from '@interfaces'
+import mongoDb from '../models/mongoDb'
+import { Student } from '../interfaces'
 import moment from 'moment'
 
 class StudentModel implements Student {

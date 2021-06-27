@@ -1,13 +1,14 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "es2020",
     "module": "commonjs",
     "lib": [
-      "es6"
+      "es2020"
     ],
     "allowJs": true,
     "outDir": "dist",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "removeComments": true,
     "typeRoots": [
       "./node_modules/@types"
@@ -16,7 +17,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "paths": {
       "@controllers/*": [
         "controllers/*"
@@ -45,7 +46,7 @@
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*.ts",
   ],
   "exclude": [
     "node_modules",
