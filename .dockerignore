@@ -1,0 +1,14 @@
+Dockefile
+README.md
+node_modules
+*.log
+jest.config.js
+package-lock.json
+tests
+.vscode
+.gitignore
+.eslintrc.json
+.editorconfig
+LICENSE
+.yarn
+.env
