@@ -2,6 +2,7 @@ module.exports = {
   apps: [{
     name: 'si-assistant-v1-0',
     script: './dist/index.js',
+    exp_backoff_restart_delay: 100,
     env_development: {
       NODE_ENV: 'Development',
       CLIENT_ID: '236409072737-e8nuea9mg7d1cjmirpena427pgs967gp.apps.googleusercontent.com',
