@@ -13,7 +13,7 @@ module.exports = {
       DB_PASS: 'D3dPVzgrPIguR8Up',
       PORT: 3000,
       SIGAA_URL: 'https://sigaa.ufpb.br',
-      SIGAA_INSTITUITION: 'UFPB'
+      SIGAA_INSTITUITION: 'UFPB',
     },
     env_production: {
       NODE_ENV: 'Production',
@@ -24,7 +24,7 @@ module.exports = {
       DB_PASS: 'D3dPVzgrPIguR8Up',
       PORT: 3000,
       SIGAA_URL: 'https://sigaa.ufpb.br',
-      SIGAA_INSTITUITION: 'UFPB'
-    }
-  }]
-}
+      SIGAA_INSTITUITION: 'UFPB',
+    },
+  }],
+};
